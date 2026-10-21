@@ -1,0 +1,843 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fenster und Haustüren in Düsseldorf | AWS Fensterbau</title>
+<meta name="description" content="AWS Fensterbau in Düsseldorf: Fenster, Haustüren, Schiebetüren, Sonnenschutz und Wintergärten. Kostenlose Beratung vor Ort und kostenloses Angebot.">
+<meta property="og:title" content="Fenster und Haustüren in Düsseldorf | AWS Fensterbau">
+<meta property="og:description" content="Kostenlose Beratung vor Ort und kostenloses Angebot für Fenster, Haustüren, Schiebetüren und Sonnenschutz in Düsseldorf.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          navy: { DEFAULT: '#0D344A', 600: '#20455E', 900: '#0A2838' },
+          ink: '#1E1E1E',
+          paper: '#F5F5F5',
+          steel: '#A8A8A7',
+          mist: '#DFE6E9'
+        },
+        fontFamily: { sans: ['Poppins', 'system-ui', 'sans-serif'] }
+      }
+    }
+  };
+</script>
+<style>
+  :root { --navy:#0D344A; --navy2:#20455E; --ink:#1E1E1E; --paper:#F5F5F5; --steel:#A8A8A7; --mist:#DFE6E9; }
+  html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+  body { font-family: Poppins, system-ui, sans-serif; color: var(--ink); background: #fff; }
+  section[id] { scroll-margin-top: 80px; }
+
+  /* Buttons */
+  .btn { display:inline-flex; align-items:center; justify-content:center; gap:.5rem; padding:.85rem 1.4rem; border-radius:4px; font-weight:600; font-size:.95rem; line-height:1.2; transition: background-color .25s, color .25s, transform .25s, box-shadow .25s; cursor:pointer; text-align:center; }
+  .btn:hover { transform: translateY(-2px); }
+  .btn-primary { background: var(--navy); color:#fff; }
+  .btn-primary:hover { background: var(--navy2); box-shadow: 0 12px 24px -10px rgba(13,52,74,.55); }
+  .btn-light { background:#fff; color: var(--navy); }
+  .btn-light:hover { background: var(--mist); box-shadow: 0 12px 24px -10px rgba(0,0,0,.4); }
+  .btn-outline-light { border:2px solid rgba(255,255,255,.7); color:#fff; }
+  .btn-outline-light:hover { background:#fff; color: var(--navy); }
+  .btn-outline { border:2px solid var(--navy); color: var(--navy); }
+  .btn-outline:hover { background: var(--navy); color:#fff; }
+  .link-arrow { font-weight:600; color: var(--navy); transition: color .2s, letter-spacing .25s; }
+  .link-arrow:hover { color: var(--navy2); letter-spacing: .02em; }
+
+  /* Reveal on scroll */
+  .reveal { opacity:0; transform: translateY(28px); transition: opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1); transition-delay: var(--d, 0ms); }
+  .reveal.in { opacity:1; transform:none; }
+
+  /* Headline word reveal */
+  .w { display:inline-block; opacity:0; transform: translateY(.45em); transition: opacity .6s ease, transform .6s cubic-bezier(.2,.7,.2,1); transition-delay: calc(var(--i, 0) * 80ms); }
+  .w.in { opacity:1; transform:none; }
+
+  /* Scroll progress */
+  #progress { position: fixed; top:0; left:0; height:3px; width:0; background: var(--navy); z-index:60; }
+
+  /* Header */
+  #top { transition: box-shadow .3s ease; }
+  #top.scrolled { box-shadow: 0 6px 20px -12px rgba(0,0,0,.35); }
+
+  /* Scroll-Folien: Farbe und Folien wechseln beim Scrollen */
+  .fold { height: 340vh; position: relative; background: var(--bg, #0D344A); color: var(--fg, #FFFFFF); }
+  .fold-stage { position: sticky; top: 0; height: 100vh; overflow: hidden; display: flex; }
+  .fold-inner { width: 100%; height: 100%; max-width: 72rem; margin: 0 auto; padding: 0 1rem; display: flex; flex-direction: column; justify-content: center; }
+  @media (min-width: 640px) { .fold-inner { padding: 0 1.5rem; } }
+  .fold-title { font-size: clamp(1.4rem, 3vw, 2.2rem); font-weight: 600; line-height: 1.2; margin-bottom: 3rem; }
+  .slides { position: relative; min-height: 320px; }
+  .slide { position: absolute; left: 0; top: 0; width: 100%; opacity: 0; will-change: transform, opacity; }
+  .slide h3 { font-size: clamp(2.25rem, 6.5vw, 4.75rem); font-weight: 600; line-height: 1.05; }
+  .slide p { margin-top: 1.5rem; max-width: 36rem; font-size: 1.125rem; line-height: 1.7; opacity: .85; }
+
+  /* Marquee */
+  .marquee-track { display:flex; width:max-content; gap:2.5rem; animation: marq 38s linear infinite; }
+  .marquee:hover .marquee-track { animation-play-state: paused; }
+  @keyframes marq { to { transform: translateX(-50%); } }
+
+  /* Tilt cards */
+  .tilt { transition: transform .45s ease, box-shadow .45s ease; transform-style: preserve-3d; }
+  .tilt:hover { box-shadow: 0 22px 40px -22px rgba(13,52,74,.45); }
+
+  /* Details (FAQ) */
+  details summary { list-style:none; cursor:pointer; }
+  details summary::-webkit-details-marker { display:none; }
+  details[open] .chev { transform: rotate(45deg); }
+  .chev { transition: transform .3s ease; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .reveal, .w { opacity:1 !important; transform:none !important; transition:none !important; }
+    .marquee-track { animation: none; }
+    .fold { height: auto; background: #F5F5F5 !important; color: #1E1E1E !important; }
+    .fold-stage { position: relative; height: auto; padding: 5rem 0; }
+    .slides { min-height: 0; }
+    .slide { position: relative; opacity: 1 !important; transform: none !important; margin-bottom: 3rem; }
+    .btn, .tilt { transition: none !important; }
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "AWS Fensterbau",
+  "description": "Fenster, Haustüren, Schiebetüren, Insektenschutz, Rollos, Garagentore, Sonnenschutz und Wintergärten in Düsseldorf. Kostenlose Beratung vor Ort und kostenloses Angebot.",
+  "telephone": "+49 160 4939239",
+  "email": "info@duesseldorf-fenster.com",
+  "url": "https://www.duesseldorf-fenster.com/",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Nixenstraße 40",
+    "postalCode": "40591",
+    "addressLocality": "Düsseldorf",
+    "addressCountry": "DE"
+  },
+  "areaServed": ["Düsseldorf", "Troisdorf", "Schwerte", "Ratingen", "Dormagen"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Was kostet die Beratung?", "acceptedAnswer": { "@type": "Answer", "text": "Die Beratung vor Ort ist kostenlos. Dazu gehört auch ein kostenloses Angebot." } },
+    { "@type": "Question", "name": "Wo arbeiten Sie?", "acceptedAnswer": { "@type": "Answer", "text": "Wir sind in Düsseldorf und Umgebung tätig. Projekte haben wir unter anderem in Troisdorf, Schwerte, Ratingen und Dormagen umgesetzt." } },
+    { "@type": "Question", "name": "Welche Produkte bieten Sie an?", "acceptedAnswer": { "@type": "Answer", "text": "Fenster, Haustüren, Schiebetüren, Insektenschutz, Rollos, Garagentore, Sonnenschutz und Wintergärten. Dazu fertigen wir Aluminium-Sonderanfertigungen." } },
+    { "@type": "Question", "name": "Wie läuft ein Auftrag ab?", "acceptedAnswer": { "@type": "Answer", "text": "Am Anfang steht die Beratung vor Ort. Danach erhalten Sie ein kostenloses Angebot. Anschließend begleiten wir Ihr Bauvorhaben bis zur Montage." } },
+    { "@type": "Question", "name": "Helfen Sie bei der Finanzierung?", "acceptedAnswer": { "@type": "Answer", "text": "Wir empfehlen Ihnen gerne unseren Finanzberater." } }
+  ]
+}
+</script>
+</head>
+
+<body class="antialiased">
+
+<div id="progress" aria-hidden="true"></div>
+
+<!-- Sticky Header -->
+<header id="top" class="fixed inset-x-0 top-0 z-50 bg-white/95 backdrop-blur">
+  <div class="mx-auto flex h-[72px] max-w-6xl items-center justify-between px-4 sm:px-6">
+    <a href="#top" class="flex items-center" aria-label="AWS Fensterbau Startseite">
+      <img src="https://static.wixstatic.com/media/8aa957_80c118ca36e7496992718b5c4850a0d9~mv2.png/v1/fill/w_372,h_192,al_c,q_85,enc_avif,quality_auto/Logo2024_web%5B7470%5D_edited_edited.png" alt="AWS Fensterbau Logo" class="h-11 w-auto">
+    </a>
+    <nav class="hidden items-center gap-7 text-sm font-medium lg:flex" aria-label="Hauptnavigation">
+      <a href="#leistungen" class="hover:text-navy">Leistungen</a>
+      <a href="#referenzen" class="hover:text-navy">Projekte</a>
+      <a href="#ueber-uns" class="hover:text-navy">Über uns</a>
+      <a href="#faq" class="hover:text-navy">FAQ</a>
+      <a href="#kontakt" class="hover:text-navy">Kontakt</a>
+    </nav>
+    <div class="flex items-center gap-2">
+      <a href="tel:+491604939239" class="btn btn-primary !px-4 !py-2.5 text-sm">Anrufen</a>
+      <button id="burger" class="p-2 lg:hidden" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobilenav">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <nav id="mobilenav" class="hidden border-t border-mist bg-white lg:hidden" aria-label="Mobile Navigation">
+    <div class="mx-auto flex max-w-6xl flex-col px-4 py-3 text-base font-medium">
+      <a href="#leistungen" class="py-3">Leistungen</a>
+      <a href="#referenzen" class="py-3">Projekte</a>
+      <a href="#ueber-uns" class="py-3">Über uns</a>
+      <a href="#faq" class="py-3">FAQ</a>
+      <a href="#kontakt" class="py-3">Kontakt</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+<!-- 1. Hero -->
+<section class="relative overflow-hidden bg-navy pt-[72px] text-white">
+  <div class="mx-auto grid max-w-6xl items-center gap-10 px-4 py-14 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:py-24">
+    <div>
+      <h1 id="h1" class="text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl">Fenster und Haustüren in Düsseldorf: kostenlos beraten, fachgerecht montiert</h1>
+      <p class="mt-6 max-w-xl text-base leading-relaxed text-white/85 sm:text-lg">AWS Fensterbau plant und montiert Fenster, Haustüren, Schiebetüren und Sonnenschutz für Häuser und Wohnungen in Düsseldorf und Umgebung. Die Beratung vor Ort ist kostenlos, und Sie erhalten ein kostenloses Angebot.</p>
+      <p class="mt-3 max-w-xl text-white/75">Wir nehmen uns Zeit für Ihre Wünsche und besprechen alles transparent. Von der ersten Beratung bis zur Montage begleiten wir Ihr Projekt.</p>
+      <div class="mt-9 flex flex-col gap-3 sm:flex-row">
+        <a href="#kontakt" class="btn btn-light">Kostenlose Beratung anfragen</a>
+        <a href="tel:+491604939239" class="btn btn-outline-light">Jetzt anrufen: +49 160 4939239</a>
+      </div>
+      <p class="mt-6 text-sm text-white/70">Mobil: +49 160 4939239 · E-Mail: info@duesseldorf-fenster.com</p>
+    </div>
+    <figure class="reveal">
+      <img src="https://static.wixstatic.com/media/7e1634_552c3adf0fc6479587e2a38372f04de7~mv2.jpg/v1/fill/w_1000,h_750,al_c,q_85/7e1634_552c3adf0fc6479587e2a38372f04de7~mv2.jpg" alt="Einbau von Fenster- und Schiebetüranlagen bei einem Neubau in Düsseldorf" class="aspect-[4/3] w-full rounded-md object-cover shadow-2xl" width="1000" height="750">
+    </figure>
+  </div>
+</section>
+
+<!-- 2. Trust-Leiste mit zählenden Zahlen -->
+<section class="border-b border-mist bg-white">
+  <div class="mx-auto grid max-w-6xl grid-cols-2 gap-6 px-4 py-9 text-center sm:px-6 md:grid-cols-4">
+    <div class="reveal">
+      <p class="text-3xl font-semibold text-navy"><span data-count="1000" data-suffix="+">1000+</span></p>
+      <p class="mt-1 text-sm text-ink/70">Umgesetzte Projekte</p>
+    </div>
+    <div class="reveal" style="--d:100ms">
+      <p class="text-3xl font-semibold text-navy"><span data-count="25">25</span></p>
+      <p class="mt-1 text-sm text-ink/70">Jahre Erfahrung im Fensterbau</p>
+    </div>
+    <div class="reveal" style="--d:200ms">
+      <p class="text-3xl font-semibold text-navy">Kostenlos</p>
+      <p class="mt-1 text-sm text-ink/70">Beratung vor Ort und Angebot</p>
+    </div>
+    <div class="reveal" style="--d:300ms">
+      <p class="text-3xl font-semibold text-navy">Eigene</p>
+      <p class="mt-1 text-sm text-ink/70">Produktionsstätte</p>
+    </div>
+  </div>
+</section>
+
+<!-- 3. Scroll-Folien: Textfarbe und Folien wechseln beim Scrollen -->
+<section id="folien" class="fold">
+  <div class="fold-stage">
+    <div class="fold-inner">
+      <h2 class="fold-title">Von der Beratung bis zur Montage aus einer Hand</h2>
+      <div class="slides">
+        <article class="slide">
+          <h3>Beratung vor Ort.</h3>
+          <p>Wir kommen zu Ihnen, besprechen Ihre Wünsche und Anforderungen und zeigen passende Lösungen. Die Beratung ist kostenlos.</p>
+        </article>
+        <article class="slide">
+          <h3>Angebot und eigene Fertigung.</h3>
+          <p>Sie erhalten ein kostenloses Angebot. Durch unsere eigene Produktionsstätte lassen sich nahezu alle Wünsche umsetzen, auch Aluminium-Sonderanfertigungen.</p>
+        </article>
+        <article class="slide">
+          <h3>Montage und Abwicklung.</h3>
+          <p>Wir begleiten Ihr Bauvorhaben über den gesamten Zeitraum bis zur Montage. Auf Wunsch empfehlen wir Ihnen einen Finanzberater.</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. Laufband -->
+<div class="marquee overflow-hidden border-y border-mist bg-white py-5" aria-label="Leistungen im Überblick">
+  <div class="marquee-track text-lg font-medium text-navy">
+    <span>Fenster</span><span class="text-steel">·</span><span>Haustüren</span><span class="text-steel">·</span><span>Schiebetüren</span><span class="text-steel">·</span><span>Insektenschutz</span><span class="text-steel">·</span><span>Rollos</span><span class="text-steel">·</span><span>Garagentore</span><span class="text-steel">·</span><span>Sonnenschutz</span><span class="text-steel">·</span><span>Wintergärten</span><span class="text-steel">·</span><span>Fassadensanierung</span><span class="text-steel">·</span><span>Aluminium-Sonderanfertigungen</span><span class="text-steel">·</span>
+    <span aria-hidden="true">Fenster</span><span class="text-steel" aria-hidden="true">·</span><span aria-hidden="true">Haustüren</span><span class="text-steel" aria-hidden="true">·</span><span aria-hidden="true">Schiebetüren</span><span class="text-steel" aria-hidden="true">·</span><span aria-hidden="true">Insektenschutz</span><span class="text-steel" aria-hidden="true">·</span><span aria-hidden="true">Rollos</span><span class="text-steel" aria-hidden="true">·</span><span aria-hidden="true">Garagentore</span><span class="text-steel" aria-hidden="true">·</span><span aria-hidden="true">Sonnenschutz</span><span class="text-steel" aria-hidden="true">·</span><span aria-hidden="true">Wintergärten</span><span class="text-steel" aria-hidden="true">·</span><span aria-hidden="true">Fassadensanierung</span><span class="text-steel" aria-hidden="true">·</span><span aria-hidden="true">Aluminium-Sonderanfertigungen</span><span class="text-steel" aria-hidden="true">·</span>
+  </div>
+</div>
+
+<!-- 5. Leistungen: alternierende Bild/Text-Blöcke -->
+<section id="leistungen" class="bg-white py-16 sm:py-24">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <h2 class="reveal max-w-3xl text-2xl font-semibold leading-snug sm:text-4xl">Fenster, Türen und Sonnenschutz aus eigener Produktion</h2>
+
+    <div class="mt-14 space-y-16 sm:space-y-24">
+      <div class="reveal grid items-center gap-8 md:grid-cols-2 md:gap-14">
+        <img src="https://static.wixstatic.com/media/7e1634_552c3adf0fc6479587e2a38372f04de7~mv2.jpg/v1/fill/w_900,h_675,al_c,q_85/7e1634_552c3adf0fc6479587e2a38372f04de7~mv2.jpg" alt="Einbau von Fenster- und Schiebetüranlagen bei einem Neubau" class="aspect-[4/3] w-full rounded-md object-cover" loading="lazy" width="900" height="675">
+        <div>
+          <h3 class="text-xl font-semibold sm:text-2xl">Fenster und Schiebetüren für Neubau und Renovierung</h3>
+          <p class="mt-4 leading-relaxed text-ink/80">Schiebefenster, Kippfenster, Drehfenster und Fenstertüren aus Kunststoff und Aluminium. Wir beraten Sie zu Form, Material und Ausführung und setzen auch individuelle Wünsche um.</p>
+          <a href="#kontakt" class="link-arrow mt-6 inline-flex">Angebot anfragen →</a>
+        </div>
+      </div>
+
+      <div class="reveal grid items-center gap-8 md:grid-cols-2 md:gap-14">
+        <div class="md:order-1">
+          <h3 class="text-xl font-semibold sm:text-2xl">Energetische Sanierung und Fassade</h3>
+          <p class="mt-4 leading-relaxed text-ink/80">Hochwertige Fenster und Türen verbessern die Wärme- und Schalldämmung und helfen dabei, Energie zu sparen. Auch Fassadensanierungen mit hinterlüfteter Fassade setzen wir um.</p>
+          <a href="#kontakt" class="link-arrow mt-6 inline-flex">Beratung vor Ort anfragen →</a>
+        </div>
+        <img src="https://static.wixstatic.com/media/7e1634_8b5870eb33a34bd8944378cc0bd99c5f~mv2.png/v1/fill/w_900,h_675,al_c,q_85/7e1634_8b5870eb33a34bd8944378cc0bd99c5f~mv2.png" alt="Fassadensanierung mit hinterlüfteter Fassade" class="aspect-[4/3] w-full rounded-md object-cover md:order-2" loading="lazy" width="900" height="675">
+      </div>
+
+      <div class="reveal grid items-center gap-8 md:grid-cols-2 md:gap-14">
+        <img src="https://static.wixstatic.com/media/7e1634_c6b3008983254d4faa1ee8eebf0d9beb~mv2.png/v1/fill/w_900,h_675,al_c,q_85/7e1634_c6b3008983254d4faa1ee8eebf0d9beb~mv2.png" alt="Nachrüstung einer Sonnenschutzanlage auf einem Balkon" class="aspect-[4/3] w-full rounded-md object-cover" loading="lazy" width="900" height="675">
+        <div>
+          <h3 class="text-xl font-semibold sm:text-2xl">Sonnenschutz, Insektenschutz und Wintergärten</h3>
+          <p class="mt-4 leading-relaxed text-ink/80">Lamellendächer, Sonnenschutzanlagen und Rollos, auf Wunsch auch nachträglich, zum Beispiel auf dem Balkon. Dazu Insektenschutz, Garagentore und fachgerecht montierte Wintergärten.</p>
+          <a href="#kontakt" class="link-arrow mt-6 inline-flex">Angebot anfragen →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. Widget: Produktkarten mit 3D-Neigung -->
+<section class="bg-paper py-16 sm:py-20">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <h2 class="reveal text-2xl font-semibold sm:text-3xl">Das gesamte Angebot im Überblick</h2>
+    <div class="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      <article class="tilt reveal rounded-md border border-mist bg-white p-6">
+        <h3 class="font-semibold text-navy">Fenster</h3>
+        <p class="mt-2 text-sm leading-relaxed text-ink/75">Schiebe-, Kipp- und Drehfenster aus Kunststoff und Aluminium.</p>
+      </article>
+      <article class="tilt reveal rounded-md border border-mist bg-white p-6" style="--d:80ms">
+        <h3 class="font-semibold text-navy">Haustüren</h3>
+        <p class="mt-2 text-sm leading-relaxed text-ink/75">Beratung und Montage für Ihre neue Haustür.</p>
+      </article>
+      <article class="tilt reveal rounded-md border border-mist bg-white p-6" style="--d:160ms">
+        <h3 class="font-semibold text-navy">Schiebetüren</h3>
+        <p class="mt-2 text-sm leading-relaxed text-ink/75">Schiebetüranlagen für Neubau und Renovierung.</p>
+      </article>
+      <article class="tilt reveal rounded-md border border-mist bg-white p-6" style="--d:240ms">
+        <h3 class="font-semibold text-navy">Insektenschutz</h3>
+        <p class="mt-2 text-sm leading-relaxed text-ink/75">Insektenschutz für Fenster und Türen.</p>
+      </article>
+      <article class="tilt reveal rounded-md border border-mist bg-white p-6">
+        <h3 class="font-semibold text-navy">Rollos</h3>
+        <p class="mt-2 text-sm leading-relaxed text-ink/75">Rollos als passende Ergänzung zu Ihren Fenstern.</p>
+      </article>
+      <article class="tilt reveal rounded-md border border-mist bg-white p-6" style="--d:80ms">
+        <h3 class="font-semibold text-navy">Garagentore</h3>
+        <p class="mt-2 text-sm leading-relaxed text-ink/75">Garagentore aus unserem Leistungsangebot.</p>
+      </article>
+      <article class="tilt reveal rounded-md border border-mist bg-white p-6" style="--d:160ms">
+        <h3 class="font-semibold text-navy">Sonnenschutz</h3>
+        <p class="mt-2 text-sm leading-relaxed text-ink/75">Lamellendächer und Sonnenschutzanlagen, auch nachrüstbar.</p>
+      </article>
+      <article class="tilt reveal rounded-md border border-mist bg-white p-6" style="--d:240ms">
+        <h3 class="font-semibold text-navy">Wintergärten</h3>
+        <p class="mt-2 text-sm leading-relaxed text-ink/75">Fachgerechte Montage von Wintergärten.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Widget: Fenster schwebt beim Scrollen -->
+<section id="fenster" class="overflow-hidden bg-white py-16 sm:py-24">
+  <div class="mx-auto grid max-w-6xl items-center gap-10 px-4 sm:px-6 md:grid-cols-2 md:gap-16">
+    <div class="reveal flex justify-center">
+      <img id="float-win" src="images/fenster-zweifluegel.png" alt="Zweiflügeliges Fenster aus Kunststoff in Weiß" class="w-full max-w-[360px] will-change-transform" loading="lazy" width="563" height="560">
+    </div>
+    <div class="reveal">
+      <h2 class="text-2xl font-semibold leading-snug sm:text-4xl">Schiebe-, Kipp- und Drehfenster aus Kunststoff und Aluminium</h2>
+      <p class="mt-5 leading-relaxed text-ink/80">Wir beraten Sie vor Ort zu Form, Material und Ausführung und erstellen Ihnen ein kostenloses Angebot.</p>
+      <a href="#kontakt" class="link-arrow mt-6 inline-flex">Kostenloses Angebot anfordern →</a>
+    </div>
+  </div>
+</section>
+
+<!-- 7. USP-Block -->
+<section class="bg-white py-16 sm:py-24">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <h2 class="reveal max-w-3xl text-2xl font-semibold leading-snug sm:text-4xl">Was Sie bei AWS Fensterbau bekommen</h2>
+    <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="reveal border-t-4 border-navy bg-paper p-6">
+        <h3 class="font-semibold">Kostenlos vor Ort</h3>
+        <p class="mt-3 text-sm leading-relaxed text-ink/80">Beratung und Angebot direkt bei Ihnen, ohne Kosten.</p>
+      </div>
+      <div class="reveal border-t-4 border-navy bg-paper p-6" style="--d:100ms">
+        <h3 class="font-semibold">Eigene Produktionsstätte</h3>
+        <p class="mt-3 text-sm leading-relaxed text-ink/80">Dadurch lassen sich nahezu alle Wünsche umsetzen, auch Aluminium-Sonderanfertigungen.</p>
+      </div>
+      <div class="reveal border-t-4 border-navy bg-paper p-6" style="--d:200ms">
+        <h3 class="font-semibold">Begleitung aus einer Hand</h3>
+        <p class="mt-3 text-sm leading-relaxed text-ink/80">Von der Beratung bis zur Montage über den gesamten Zeitraum Ihres Bauvorhabens.</p>
+      </div>
+      <div class="reveal border-t-4 border-navy bg-paper p-6" style="--d:300ms">
+        <h3 class="font-semibold">Transparente Beratung</h3>
+        <p class="mt-3 text-sm leading-relaxed text-ink/80">Wir nehmen uns Zeit für Ihre individuellen Wünsche und Anforderungen und erklären die Lösungen verständlich.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. Referenzen / Projekte -->
+<section id="referenzen" class="bg-paper py-16 sm:py-24">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <h2 class="reveal max-w-3xl text-2xl font-semibold leading-snug sm:text-4xl">Projekte, die wir umgesetzt haben</h2>
+    <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <figure class="reveal">
+        <img src="https://static.wixstatic.com/media/7e1634_998557cbd9a943e99394327b44ad293e~mv2.jpg/v1/fill/w_900,h_675,al_c,q_85/7e1634_998557cbd9a943e99394327b44ad293e~mv2.jpg" alt="Energetische Sanierung eines Gewerbeobjekts" class="aspect-[4/3] w-full rounded-md object-cover" loading="lazy">
+        <figcaption class="mt-3 text-sm text-ink/75">Energetische Sanierung eines Gewerbeobjekts</figcaption>
+      </figure>
+      <figure class="reveal" style="--d:100ms">
+        <img src="https://static.wixstatic.com/media/7e1634_b9de0ce8cbd64b2b9a360d09d552eafa~mv2.jpg/v1/fill/w_900,h_675,al_c,q_85/7e1634_b9de0ce8cbd64b2b9a360d09d552eafa~mv2.jpg" alt="Energetische Sanierung eines Reihenhauses" class="aspect-[4/3] w-full rounded-md object-cover" loading="lazy">
+        <figcaption class="mt-3 text-sm text-ink/75">Energetische Sanierung eines Reihenhauses</figcaption>
+      </figure>
+      <figure class="reveal" style="--d:200ms">
+        <img src="https://static.wixstatic.com/media/7e1634_c71d26b46f7746359d02e4b0c2c18c10~mv2.jpg/v1/fill/w_900,h_675,al_c,q_85/7e1634_c71d26b46f7746359d02e4b0c2c18c10~mv2.jpg" alt="Modernisierung eines Quartierszentrums" class="aspect-[4/3] w-full rounded-md object-cover" loading="lazy">
+        <figcaption class="mt-3 text-sm text-ink/75">Modernisierung eines Quartierszentrums</figcaption>
+      </figure>
+      <figure class="reveal">
+        <img src="https://static.wixstatic.com/media/7e1634_a1017e9c45d64dddad878ac75e2b25a3~mv2.jpg/v1/fill/w_900,h_675,al_c,q_85/7e1634_a1017e9c45d64dddad878ac75e2b25a3~mv2.jpg" alt="Einbau von Fenster- und Schiebetüranlagen bei einem Neubau inklusive Sonnenschutzanlagen" class="aspect-[4/3] w-full rounded-md object-cover" loading="lazy">
+        <figcaption class="mt-3 text-sm text-ink/75">Einbau von Fenster- und Schiebetüranlagen inklusive Sonnenschutz</figcaption>
+      </figure>
+      <figure class="reveal" style="--d:100ms">
+        <img src="https://static.wixstatic.com/media/7e1634_8b5870eb33a34bd8944378cc0bd99c5f~mv2.png/v1/fill/w_900,h_675,al_c,q_85/7e1634_8b5870eb33a34bd8944378cc0bd99c5f~mv2.png" alt="Fassadensanierung mit hinterlüfteter Fassade" class="aspect-[4/3] w-full rounded-md object-cover" loading="lazy">
+        <figcaption class="mt-3 text-sm text-ink/75">Fassadensanierung mit hinterlüfteter Fassade</figcaption>
+      </figure>
+      <figure class="reveal" style="--d:200ms">
+        <img src="https://static.wixstatic.com/media/7e1634_579621f572174ae5a485385acb30618c~mv2.png/v1/fill/w_900,h_675,al_c,q_85/7e1634_579621f572174ae5a485385acb30618c~mv2.png" alt="Fachgerechte Montage eines Wintergartens" class="aspect-[4/3] w-full rounded-md object-cover" loading="lazy">
+        <figcaption class="mt-3 text-sm text-ink/75">Fachgerechte Montage eines Wintergartens</figcaption>
+      </figure>
+    </div>
+    <div class="reveal mt-10">
+      <a href="https://www.duesseldorf-fenster.com/projekte" class="link-arrow">Alle Projekte auf unserer Website ansehen →</a>
+    </div>
+  </div>
+</section>
+
+<!-- 9. Widget: Projekt-Finder -->
+<section id="finder" class="bg-white py-16 sm:py-24">
+  <div class="mx-auto max-w-3xl px-4 sm:px-6">
+    <h2 class="reveal text-center text-2xl font-semibold leading-snug sm:text-4xl">Finden Sie in zwei Schritten Ihre passende Lösung</h2>
+    <div class="reveal mt-10 rounded-md border border-mist bg-paper p-6 sm:p-10">
+      <p id="f-step" class="text-sm font-medium text-navy">Schritt 1 von 2</p>
+      <h3 id="f-q" class="mt-2 text-xl font-semibold">Was möchten Sie verbessern?</h3>
+      <div id="f-opts" class="mt-6 grid gap-3 sm:grid-cols-2"></div>
+      <div id="f-result" class="mt-8 hidden">
+        <p id="f-text" class="leading-relaxed text-ink/85"></p>
+        <div class="mt-6 flex flex-col gap-3 sm:flex-row">
+          <button id="f-go" type="button" class="btn btn-primary">Anfrage mit diesem Anliegen vorbereiten</button>
+          <button id="f-reset" type="button" class="btn btn-outline">Neu starten</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 10. CTA-Block (Mitte) -->
+<section class="bg-navy py-16 text-white sm:py-20">
+  <div class="mx-auto max-w-4xl px-4 text-center sm:px-6">
+    <h2 class="reveal text-2xl font-semibold leading-snug sm:text-4xl">Lassen Sie uns über Ihr Projekt sprechen</h2>
+    <p class="reveal mx-auto mt-4 max-w-2xl text-white/85">Rufen Sie uns an oder schreiben Sie uns. Die Beratung vor Ort ist kostenlos.</p>
+    <div class="reveal mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
+      <a href="tel:+491604939239" class="btn btn-light">Jetzt anrufen: +49 160 4939239</a>
+      <a href="#kontakt" class="btn btn-outline-light">Kostenlose Beratung anfragen</a>
+    </div>
+  </div>
+</section>
+
+<!-- 11. Über uns -->
+<section id="ueber-uns" class="bg-white py-16 sm:py-24">
+  <div class="mx-auto max-w-3xl px-4 sm:px-6">
+    <div class="reveal">
+      <h2 class="text-2xl font-semibold leading-snug sm:text-4xl">Ein junges Team mit langjähriger Erfahrung im Fensterbau</h2>
+      <p class="mt-6 leading-relaxed text-ink/80">Wir sind ein junges und dynamisches Team mit langjähriger Erfahrung im Bereich Fensterbau. Wir bieten unseren Kunden eine individuelle Beratung und legen großen Wert auf Kundenzufriedenheit.</p>
+      <p class="mt-4 leading-relaxed text-ink/80">Wir setzen auf hochwertige Produkte und arbeiten nur mit den besten Materialien und Zulieferern zusammen. Bei uns steht der Kunde im Mittelpunkt, und wir besprechen Ihre Anforderungen in Ruhe.</p>
+      <p class="mt-4 text-sm text-ink/70">Ansprechpartner: Tim Warnt</p>
+    </div>
+  </div>
+</section>
+
+<!-- 13. FAQ -->
+<section id="faq" class="bg-white py-16 sm:py-24">
+  <div class="mx-auto max-w-3xl px-4 sm:px-6">
+    <h2 class="reveal text-2xl font-semibold leading-snug sm:text-4xl">Häufige Fragen zu Beratung, Angebot und Montage</h2>
+    <div class="mt-10 divide-y divide-mist border-y border-mist">
+      <details class="reveal py-5" open>
+        <summary class="flex items-center justify-between gap-4 text-left font-semibold">Was kostet die Beratung? <span class="chev text-2xl leading-none text-navy">+</span></summary>
+        <p class="mt-4 leading-relaxed text-ink/80">Die Beratung vor Ort ist kostenlos. Dazu gehört auch ein kostenloses Angebot.</p>
+      </details>
+      <details class="reveal py-5">
+        <summary class="flex items-center justify-between gap-4 text-left font-semibold">Wo arbeiten Sie? <span class="chev text-2xl leading-none text-navy">+</span></summary>
+        <p class="mt-4 leading-relaxed text-ink/80">Wir sind in Düsseldorf und Umgebung tätig. Projekte haben wir unter anderem in Troisdorf, Schwerte, Ratingen und Dormagen umgesetzt.</p>
+      </details>
+      <details class="reveal py-5">
+        <summary class="flex items-center justify-between gap-4 text-left font-semibold">Welche Produkte bieten Sie an? <span class="chev text-2xl leading-none text-navy">+</span></summary>
+        <p class="mt-4 leading-relaxed text-ink/80">Fenster, Haustüren, Schiebetüren, Insektenschutz, Rollos, Garagentore, Sonnenschutz und Wintergärten. Dazu fertigen wir Aluminium-Sonderanfertigungen.</p>
+      </details>
+      <details class="reveal py-5">
+        <summary class="flex items-center justify-between gap-4 text-left font-semibold">Wie läuft ein Auftrag ab? <span class="chev text-2xl leading-none text-navy">+</span></summary>
+        <p class="mt-4 leading-relaxed text-ink/80">Am Anfang steht die Beratung vor Ort. Danach erhalten Sie ein kostenloses Angebot. Anschließend begleiten wir Ihr Bauvorhaben bis zur Montage.</p>
+      </details>
+      <details class="reveal py-5">
+        <summary class="flex items-center justify-between gap-4 text-left font-semibold">Helfen Sie bei der Finanzierung? <span class="chev text-2xl leading-none text-navy">+</span></summary>
+        <p class="mt-4 leading-relaxed text-ink/80">Ja, wir empfehlen Ihnen gerne unseren Finanzberater.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- 14. Kontakt + Einsatzgebiet-Check + Formular -->
+<section id="kontakt" class="bg-paper py-16 sm:py-24">
+  <div class="mx-auto grid max-w-6xl gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16">
+    <div class="reveal">
+      <h2 class="text-2xl font-semibold leading-snug sm:text-4xl">Ihr nächstes Projekt planen</h2>
+      <p class="mt-4 leading-relaxed text-ink/80">Kontaktieren Sie uns, um eine kostenlose Beratung zu vereinbaren.</p>
+
+      <dl class="mt-8 space-y-4 text-ink/85">
+        <div><dt class="text-sm text-ink/60">Mobil</dt><dd class="text-lg font-semibold"><a href="tel:+491604939239" class="hover:text-navy">+49 160 4939239</a></dd></div>
+        <div><dt class="text-sm text-ink/60">E-Mail</dt><dd class="text-lg font-semibold"><a href="mailto:info@duesseldorf-fenster.com" class="hover:text-navy">info@duesseldorf-fenster.com</a></dd></div>
+        <div><dt class="text-sm text-ink/60">Adresse</dt><dd class="font-semibold">AWS Fensterbau, Nixenstraße 40, 40591 Düsseldorf</dd></div>
+      </dl>
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=Nixenstra%C3%9Fe+40+40591+D%C3%BCsseldorf" target="_blank" rel="noopener" class="link-arrow mt-4 inline-flex">Route in Google Maps öffnen →</a>
+
+      <div class="reveal mt-12 rounded-md border border-mist bg-white p-6" id="einsatz">
+        <h3 class="text-lg font-semibold">Liegt Ihr Ort in unserem Einsatzgebiet?</h3>
+        <p class="mt-1 text-sm text-ink/70">Bekannte Orte: Düsseldorf, Troisdorf, Schwerte, Ratingen, Dormagen</p>
+        <form id="einsatz-form" class="mt-4 flex flex-col gap-3 sm:flex-row">
+          <label for="ort" class="sr-only">Ihr Ort</label>
+          <input id="ort" type="text" placeholder="Ihr Ort, z. B. Ratingen" class="w-full rounded-[4px] border border-mist px-4 py-3 text-sm outline-none focus:border-navy">
+          <button type="submit" class="btn btn-primary">Prüfen</button>
+        </form>
+        <p id="einsatz-result" class="mt-4 hidden text-sm leading-relaxed"></p>
+      </div>
+    </div>
+
+    <div class="reveal rounded-md bg-white p-6 shadow-sm sm:p-8" style="--d:120ms">
+      <h3 class="text-xl font-semibold">Anfrage senden</h3>
+      <form id="kontakt-form" class="mt-6 grid gap-4 sm:grid-cols-2">
+        <div>
+          <label for="vorname" class="mb-1 block text-sm font-medium">Vorname</label>
+          <input id="vorname" name="vorname" type="text" autocomplete="given-name" class="w-full rounded-[4px] border border-mist px-4 py-3 text-sm outline-none focus:border-navy">
+        </div>
+        <div>
+          <label for="nachname" class="mb-1 block text-sm font-medium">Nachname</label>
+          <input id="nachname" name="nachname" type="text" autocomplete="family-name" class="w-full rounded-[4px] border border-mist px-4 py-3 text-sm outline-none focus:border-navy">
+        </div>
+        <div>
+          <label for="email" class="mb-1 block text-sm font-medium">E-Mail</label>
+          <input id="email" name="email" type="email" autocomplete="email" class="w-full rounded-[4px] border border-mist px-4 py-3 text-sm outline-none focus:border-navy">
+        </div>
+        <div>
+          <label for="telefon" class="mb-1 block text-sm font-medium">Telefon</label>
+          <input id="telefon" name="telefon" type="tel" autocomplete="tel" class="w-full rounded-[4px] border border-mist px-4 py-3 text-sm outline-none focus:border-navy">
+        </div>
+        <div class="sm:col-span-2">
+          <label for="adresse" class="mb-1 block text-sm font-medium">Adresse des Bauvorhabens</label>
+          <input id="adresse" name="adresse" type="text" autocomplete="street-address" class="w-full rounded-[4px] border border-mist px-4 py-3 text-sm outline-none focus:border-navy">
+        </div>
+        <div class="sm:col-span-2">
+          <label for="f-betreff" class="mb-1 block text-sm font-medium">Betreff</label>
+          <select id="f-betreff" name="betreff" class="w-full rounded-[4px] border border-mist bg-white px-4 py-3 text-sm outline-none focus:border-navy">
+            <option>Fenster</option>
+            <option>Haustür</option>
+            <option>Schiebetür</option>
+            <option>Sonnenschutz oder Rollo</option>
+            <option>Insektenschutz</option>
+            <option>Garagentor</option>
+            <option>Wintergarten</option>
+            <option>Fassade</option>
+            <option>Sonstiges</option>
+          </select>
+        </div>
+        <div class="sm:col-span-2">
+          <label for="nachricht" class="mb-1 block text-sm font-medium">Nachricht</label>
+          <textarea id="nachricht" name="nachricht" rows="4" class="w-full rounded-[4px] border border-mist px-4 py-3 text-sm outline-none focus:border-navy"></textarea>
+        </div>
+        <div class="sm:col-span-2 flex items-start gap-3 text-sm text-ink/80">
+          <input id="datenschutz" type="checkbox" required class="mt-1 h-4 w-4 accent-[#0D344A]">
+          <label for="datenschutz">Ich habe die <a href="https://www.duesseldorf-fenster.com/datenschutz" class="font-semibold text-navy underline underline-offset-2">Datenschutzerklärung</a> gelesen und bin einverstanden, dass meine Angaben zur Bearbeitung meiner Anfrage gespeichert werden.</label>
+        </div>
+        <div class="sm:col-span-2">
+          <button type="submit" class="btn btn-primary w-full sm:w-auto">Anfrage senden</button>
+          <p id="form-note" class="mt-3 hidden rounded-[4px] bg-paper p-3 text-sm leading-relaxed"></p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-navy-900 py-10 text-sm text-white/75">
+  <div class="mx-auto flex max-w-6xl flex-col gap-6 px-4 sm:px-6 md:flex-row md:items-center md:justify-between">
+    <div>
+      <p class="font-semibold text-white">AWS Fensterbau</p>
+      <p class="mt-1">Nixenstraße 40, 40591 Düsseldorf</p>
+    </div>
+    <nav class="flex flex-wrap gap-x-6 gap-y-2" aria-label="Rechtliches">
+      <a href="https://www.duesseldorf-fenster.com/impressum" class="hover:text-white">Impressum</a>
+      <a href="https://www.duesseldorf-fenster.com/datenschutz" class="hover:text-white">Datenschutz</a>
+      <a href="#kontakt" class="hover:text-white">Kontakt</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var canHover = window.matchMedia('(hover: hover)').matches;
+
+  /* Header Schatten beim Scrollen + Fortschrittsbalken */
+  var header = document.getElementById('top');
+  var bar = document.getElementById('progress');
+  var ticking = false;
+
+  function clamp(v, a, b) { return Math.min(b, Math.max(a, v)); }
+
+  function onScroll() {
+    header.classList.toggle('scrolled', window.scrollY > 10);
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.width = (max > 0 ? (window.scrollY / max) * 100 : 0) + '%';
+
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', function () {
+    if (!ticking) { ticking = true; requestAnimationFrame(onScroll); }
+  }, { passive: true });
+  window.addEventListener('resize', onScroll);
+  onScroll();
+
+  /* Mobile Menü */
+  var burger = document.getElementById('burger');
+  var mnav = document.getElementById('mobilenav');
+  burger.addEventListener('click', function () {
+    var open = mnav.classList.toggle('hidden') === false;
+    burger.setAttribute('aria-expanded', String(open));
+    burger.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
+  });
+  mnav.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { mnav.classList.add('hidden'); burger.setAttribute('aria-expanded', 'false'); });
+  });
+
+  /* Hero: Wort-für-Wort-Einblendung */
+  var h1 = document.getElementById('h1');
+  if (h1) {
+    var words = h1.textContent.trim().split(/\s+/);
+    h1.innerHTML = words.map(function (w, i) {
+      return '<span class="w" style="--i:' + i + '">' + w + '</span>';
+    }).join(' ');
+    requestAnimationFrame(function () {
+      h1.querySelectorAll('.w').forEach(function (el) { el.classList.add('in'); });
+    });
+  }
+
+  /* Reveal beim Scrollen */
+  var revealEls = document.querySelectorAll('.reveal');
+  if (reduce || !('IntersectionObserver' in window)) {
+    revealEls.forEach(function (el) { el.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(function (el) { io.observe(el); });
+  }
+
+  /* Zählende Zahlen in der Trust-Leiste */
+  var counters = document.querySelectorAll('[data-count]');
+  function runCount(el) {
+    var target = parseInt(el.getAttribute('data-count'), 10);
+    var suffix = el.getAttribute('data-suffix') || '';
+    if (reduce) { el.textContent = target + suffix; return; }
+    var start = null, dur = 3000;
+    el.textContent = '0' + suffix;
+    function step(ts) {
+      if (start === null) start = ts;
+      var t = clamp((ts - start) / dur, 0, 1);
+      el.textContent = Math.round(target * (1 - Math.pow(1 - t, 2))) + suffix;
+      if (t < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  if (!reduce) counters.forEach(function (el) { el.textContent = '0' + (el.getAttribute('data-suffix') || ''); });
+  if ('IntersectionObserver' in window && !reduce) {
+    var cio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { runCount(e.target); cio.unobserve(e.target); }
+      });
+    }, { threshold: 0.3 });
+    counters.forEach(function (el) { cio.observe(el); });
+  } else {
+    counters.forEach(function (el) { el.textContent = el.getAttribute('data-count') + (el.getAttribute('data-suffix') || ''); });
+  }
+
+  /* 3D-Neigung der Produktkarten (nur mit Maus) */
+  if (canHover && !reduce) {
+    document.querySelectorAll('.tilt').forEach(function (card) {
+      card.addEventListener('pointermove', function (e) {
+        var b = card.getBoundingClientRect();
+        var x = (e.clientX - b.left) / b.width;
+        var y = (e.clientY - b.top) / b.height;
+        card.style.transform = 'perspective(800px) rotateX(' + ((0.5 - y) * 10) + 'deg) rotateY(' + ((x - 0.5) * 12) + 'deg) translateY(-4px)';
+      });
+      card.addEventListener('pointerleave', function () { card.style.transform = ''; });
+    });
+  }
+
+  /* Projekt-Finder */
+  var products = ['Fenster', 'Haustür', 'Schiebetür', 'Sonnenschutz oder Rollo', 'Wintergarten', 'Fassade', 'Insektenschutz', 'Garagentor'];
+  var scopes = [
+    { label: 'Ein einzelnes Element', text: 'Bei einem einzelnen Element klären wir Maße, Material und Ausführung direkt bei Ihnen.' },
+    { label: 'Mehrere Fenster oder Türen', text: 'Bei mehreren Elementen besprechen wir Ihre Wünsche und die passende Ausführung gemeinsam.' },
+    { label: 'Komplette Sanierung oder Neubau', text: 'Bei einer Sanierung oder einem Neubau begleiten wir Sie von der Beratung bis zur Montage.' },
+    { label: 'Ich bin mir noch nicht sicher', text: 'Wenn Sie noch unsicher sind, hilft ein Gespräch vor Ort am meisten.' }
+  ];
+  var state = { step: 1, product: '', scope: '' };
+  var fOpts = document.getElementById('f-opts');
+  var fStep = document.getElementById('f-step');
+  var fQ = document.getElementById('f-q');
+  var fResult = document.getElementById('f-result');
+  var fText = document.getElementById('f-text');
+
+  function option(label, onPick) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'btn btn-outline w-full !justify-start bg-white text-left';
+    b.textContent = label;
+    b.addEventListener('click', onPick);
+    return b;
+  }
+
+  function renderFinder() {
+    fOpts.innerHTML = '';
+    fResult.classList.add('hidden');
+    fOpts.classList.remove('hidden');
+    if (state.step === 1) {
+      fStep.textContent = 'Schritt 1 von 2';
+      fQ.textContent = 'Was möchten Sie verbessern?';
+      products.forEach(function (p) {
+        fOpts.appendChild(option(p, function () { state.product = p; state.step = 2; renderFinder(); }));
+      });
+    } else {
+      fStep.textContent = 'Schritt 2 von 2';
+      fQ.textContent = 'Wie umfangreich ist Ihr Vorhaben?';
+      scopes.forEach(function (s) {
+        fOpts.appendChild(option(s.label, function () { state.scope = s.label; showResult(s.text); }));
+      });
+    }
+  }
+
+  function showResult(scopeText) {
+    fOpts.classList.add('hidden');
+    fStep.textContent = 'Ihre Empfehlung';
+    fQ.textContent = 'Für ' + state.product + ' empfehlen wir eine Beratung vor Ort.';
+    fText.textContent = scopeText + ' Die Beratung und das Angebot sind kostenlos.';
+    fResult.classList.remove('hidden');
+  }
+
+  document.getElementById('f-go').addEventListener('click', function () {
+    var sel = document.getElementById('f-betreff');
+    for (var i = 0; i < sel.options.length; i++) {
+      if (sel.options[i].value === state.product || sel.options[i].text === state.product) { sel.selectedIndex = i; break; }
+    }
+    document.getElementById('kontakt').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' });
+  });
+  document.getElementById('f-reset').addEventListener('click', function () {
+    state = { step: 1, product: '', scope: '' };
+    renderFinder();
+  });
+  renderFinder();
+
+  /* Einsatzgebiet-Check */
+  var places = ['Düsseldorf', 'Troisdorf', 'Schwerte', 'Ratingen', 'Dormagen'];
+  function norm(s) { return s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/ue/g, 'u').replace(/oe/g, 'o').trim(); }
+  document.getElementById('einsatz-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var val = norm(document.getElementById('ort').value);
+    var out = document.getElementById('einsatz-result');
+    if (!val) { out.textContent = 'Bitte geben Sie Ihren Ort ein.'; out.classList.remove('hidden'); return; }
+    var hit = places.some(function (p) { return norm(p) === val || val.indexOf(norm(p)) !== -1; });
+    out.textContent = hit
+      ? 'Ja, dort haben wir bereits Projekte umgesetzt. Schreiben Sie uns gern, wir beraten Sie vor Ort.'
+      : 'Schreiben Sie uns trotzdem. Wir prüfen Ihre Anfrage auch für Orte, die hier noch nicht aufgeführt sind.';
+    out.classList.remove('hidden');
+  });
+
+  /* Formular: noch ohne Versand-Backend, daher keine Erfolgsmeldung */
+  document.getElementById('kontakt-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var note = document.getElementById('form-note');
+    note.textContent = 'Der Versand dieser Anfrage ist noch nicht angebunden. Bitte rufen Sie uns an unter +49 160 4939239 oder schreiben Sie an info@duesseldorf-fenster.com.';
+    note.classList.remove('hidden');
+  });
+})();
+</script>
+<script>
+(() => {
+  const section = document.getElementById('folien');
+  if (!section) return;
+
+  const slides = Array.from(section.querySelectorAll('.slide'));
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+  const ease = t => t * t * (3 - 2 * t);
+  const mix = (a, b, t) => a.map((v, i) => Math.round(v + (b[i] - v) * t));
+
+  const NAVY = [13, 52, 74];
+  const PAPER = [245, 245, 245];
+  const WHITE = [255, 255, 255];
+  const INK = [30, 30, 30];
+
+  function progress() {
+    const r = section.getBoundingClientRect();
+    const total = section.offsetHeight - window.innerHeight;
+    return clamp(-r.top / total);
+  }
+
+  function render(p) {
+    // Hintergrund und Schrift wechseln in der ersten Hälfte von weiß auf dunkel
+    const c = ease(clamp(p / 0.5));
+    section.style.setProperty('--bg', `rgb(${mix(NAVY, PAPER, c).join(',')})`);
+    section.style.setProperty('--fg', `rgb(${mix(WHITE, INK, c).join(',')})`);
+
+    // Folien: jede bekommt einen Drittel-Abschnitt, schiebt von unten ein und oben aus
+    slides.forEach((el, i) => {
+      const enter = i === 0 ? 1 : clamp((p - i / 3) / 0.08);
+      const exit = i === slides.length - 1 ? 1 : clamp(((i + 1) / 3 - p) / 0.08);
+      el.style.opacity = enter * exit;
+      el.style.transform = `translateY(${(1 - enter) * 50 - (1 - exit) * 50}px)`;
+    });
+  }
+
+  if (reduce) return;
+
+  let ticking = false;
+  function update() {
+    ticking = false;
+    render(progress());
+  }
+  function request() {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(update);
+    }
+  }
+
+  window.addEventListener('scroll', request, { passive: true });
+  window.addEventListener('resize', request);
+  update();
+})();
+</script>
+
+<script>
+(() => {
+  const img = document.getElementById('float-win');
+  if (!img || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const section = img.closest('section');
+
+  let ticking = false;
+  function update() {
+    ticking = false;
+    const r = section.getBoundingClientRect();
+    const vh = window.innerHeight;
+    // Fortschritt, während der Abschnitt durchs Bild läuft (0 unten, 1 oben)
+    const p = Math.min(1, Math.max(0, (vh - r.top) / (vh + r.height)));
+    img.style.transform = `translateY(${(Math.sin(p * Math.PI * 2) * 26).toFixed(1)}px)`;
+  }
+  function request() {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(update);
+    }
+  }
+  window.addEventListener('scroll', request, { passive: true });
+  window.addEventListener('resize', request);
+  update();
+})();
+</script>
+</body>
+</html>
