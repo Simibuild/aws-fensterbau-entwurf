@@ -75,8 +75,8 @@
   .slide p { margin-top: 1.5rem; max-width: 36rem; font-size: 1.125rem; line-height: 1.7; opacity: .85; }
 
   /* Fenster-Widget: schwebt dauerhaft rauf und runter, unabhängig vom Scrollen */
-  @keyframes float-win { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-18px); } }
-  .float-win { animation: float-win 6s ease-in-out infinite; will-change: transform; }
+  @keyframes float-win { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-32px); } }
+  .float-win { animation: float-win 4s ease-in-out infinite; will-change: transform; }
   @media (prefers-reduced-motion: reduce) { .float-win { animation: none; } }
   /* Marquee */
   .marquee-track { display:flex; width:max-content; gap:2.5rem; animation: marq 38s linear infinite; }
