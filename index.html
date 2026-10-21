@@ -74,6 +74,10 @@
   .slide h3 { font-size: clamp(2.25rem, 6.5vw, 4.75rem); font-weight: 600; line-height: 1.05; }
   .slide p { margin-top: 1.5rem; max-width: 36rem; font-size: 1.125rem; line-height: 1.7; opacity: .85; }
 
+  /* Fenster-Widget: schwebt dauerhaft rauf und runter, unabhängig vom Scrollen */
+  @keyframes float-win { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-18px); } }
+  .float-win { animation: float-win 6s ease-in-out infinite; will-change: transform; }
+  @media (prefers-reduced-motion: reduce) { .float-win { animation: none; } }
   /* Marquee */
   .marquee-track { display:flex; width:max-content; gap:2.5rem; animation: marq 38s linear infinite; }
   .marquee:hover .marquee-track { animation-play-state: paused; }
@@ -324,7 +328,7 @@
 <section id="fenster" class="overflow-hidden bg-white py-16 sm:py-24">
   <div class="mx-auto grid max-w-6xl items-center gap-10 px-4 sm:px-6 md:grid-cols-2 md:gap-16">
     <div class="reveal flex justify-center">
-      <img id="float-win" src="images/fenster-zweifluegel.png" alt="Zweiflügeliges Fenster aus Kunststoff in Weiß" class="w-full max-w-[360px] will-change-transform" loading="lazy" width="563" height="560">
+      <img id="float-win" src="images/fenster-zweifluegel.png" alt="Zweiflügeliges Fenster aus Kunststoff in Weiß" class="float-win w-full max-w-[360px]" loading="lazy" width="563" height="560">
     </div>
     <div class="reveal">
       <h2 class="text-2xl font-semibold leading-snug sm:text-4xl">Schiebe-, Kipp- und Drehfenster aus Kunststoff und Aluminium</h2>
@@ -813,31 +817,5 @@
 })();
 </script>
 
-<script>
-(() => {
-  const img = document.getElementById('float-win');
-  if (!img || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  const section = img.closest('section');
-
-  let ticking = false;
-  function update() {
-    ticking = false;
-    const r = section.getBoundingClientRect();
-    const vh = window.innerHeight;
-    // Fortschritt, während der Abschnitt durchs Bild läuft (0 unten, 1 oben)
-    const p = Math.min(1, Math.max(0, (vh - r.top) / (vh + r.height)));
-    img.style.transform = `translateY(${(Math.sin(p * Math.PI * 2) * 26).toFixed(1)}px)`;
-  }
-  function request() {
-    if (!ticking) {
-      ticking = true;
-      requestAnimationFrame(update);
-    }
-  }
-  window.addEventListener('scroll', request, { passive: true });
-  window.addEventListener('resize', request);
-  update();
-})();
-</script>
 </body>
 </html>
